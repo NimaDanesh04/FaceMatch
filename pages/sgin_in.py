@@ -1,16 +1,17 @@
 import streamlit as st
+st.set_page_config(page_title='my web app', page_icon=":tada", layout='wide')
 if 'key' in st.session_state:
     if st.session_state['key']:
         st.success(f'your in your accont {st.session_state["name"]} {st.session_state["last_name"]}')
 else:
     st.header('sgin in')
     
-from hashlib import sha256
+    from hashlib import sha256
 
-import sqlite3 as sql
-import re
+    import sqlite3 as sql 
+    import re
 
-st.set_page_config(page_title='my web app', page_icon=":tada", layout='wide')
+    
 
 
 

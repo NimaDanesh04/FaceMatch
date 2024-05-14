@@ -1,9 +1,8 @@
-from deepface import DeepFace
 import os
 import streamlit as st
 import numpy as np
 from PIL import Image
-import cv2 as cv
+
 
 st.set_page_config(page_title='my web app', page_icon=":tada", layout='wide')
 if 'key' not in st.session_state:
@@ -11,7 +10,8 @@ if 'key' not in st.session_state:
     st.stop()
 if st.session_state['key'] is True:
     input_image = st.file_uploader("Upload Image 1", type=["jpg"])
-    
+    from deepface import DeepFace
+    import cv2 as cv
     if input_image is not None:
         image = np.array(Image.open(input_image))
         image_6 = cv.resize(image, (500, 500))
